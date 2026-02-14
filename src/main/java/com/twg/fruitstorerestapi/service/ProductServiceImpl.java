@@ -20,6 +20,11 @@ public class ProductServiceImpl implements ProductService {
 		// TODO Auto-generated method stub
 		return productrepository.save(fruits);
 	}
+	@Override
+	public List<Fruits> searchByName(String name) {
+	    return productrepository.findByNameContainingIgnoreCase(name);
+	}
+
 
 	@Override
 	public Fruits updateFruit(Fruits fruits) {

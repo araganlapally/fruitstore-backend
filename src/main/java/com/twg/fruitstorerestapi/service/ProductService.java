@@ -11,6 +11,8 @@ public interface ProductService {
 	  public void deletefruit(Fruits fruits);
 	  public Fruits findById(long id);
 	  public List <Fruits> findAll();
+	  public List<Fruits> searchByName(String name);
+
 	  
 
 }

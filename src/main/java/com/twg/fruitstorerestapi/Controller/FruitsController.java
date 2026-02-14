@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.twg.fruitstorerestapi.Entity.Fruits;
@@ -21,7 +22,7 @@ import com.twg.fruitstorerestapi.service.ProductService;
 import com.twg.fruitstorerestapi.service.UserService;
 
 import jakarta.servlet.http.HttpSession;
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 @RestController
 public class FruitsController {
 	@Autowired
@@ -36,6 +37,11 @@ public class FruitsController {
 		
 		return fruitslist;
 	}
+	@GetMapping("/fruits/search")
+	public List<Fruits> searchFruits(@RequestParam String name) {
+	    return productservice.searchByName(name);
+	}
+
 	@GetMapping("/fruits/{id}")
 	public Fruits addfruit(@PathVariable long id)
 	{
@@ -82,6 +88,11 @@ public class FruitsController {
 		User registeredUser=userService.registerUser(user);
 		return  registeredUser;
 	}
+	@GetMapping("/user/{username}")
+	public User getUser(@PathVariable String username){
+	    return userService.findByUsername(username);
+	}
+
 	
 	@PostMapping("/login")
 	public ResponseEntity<String> loginUser(@RequestBody Login loginRequest, HttpSession session) {
