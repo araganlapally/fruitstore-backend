@@ -22,7 +22,8 @@ import com.twg.fruitstorerestapi.service.ProductService;
 import com.twg.fruitstorerestapi.service.UserService;
 
 import jakarta.servlet.http.HttpSession;
-@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
+@CrossOrigin(origins = "http://40.192.14.112:3000", allowCredentials = "true")
+
 @RestController
 public class FruitsController {
 	@Autowired
