@@ -8,7 +8,7 @@ import com.twg.fruitstorerestapi.Entity.*;
 import com.twg.fruitstorerestapi.Repository.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
+@CrossOrigin(origins = "http://40.192.14.112:3000", allowCredentials = "true")
 public class CartController {
 
     @Autowired
