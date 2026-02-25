@@ -12,7 +12,7 @@ import com.twg.fruitstorerestapi.Repository.CartRepository;
 import com.twg.fruitstorerestapi.Repository.OrderItemRepository;
 import com.twg.fruitstorerestapi.Repository.OrderRepository;
 
-@CrossOrigin(origins = "http://98.130.121.172:3000", allowCredentials = "true")
+@CrossOrigin(origins = "http://16.112.12.66:3000", allowCredentials = "true")
 @RestController
 public class OrderController {
 
